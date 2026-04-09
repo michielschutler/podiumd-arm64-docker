@@ -6,6 +6,8 @@ on:
 jobs:
   build-docker-image:
     runs-on: ubuntu-24.04-arm
+    permissions:
+      packages: write
     env:
       OPEN_ZAAK_VERSION: 1.26.0
     steps:
