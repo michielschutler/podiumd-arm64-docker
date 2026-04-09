@@ -19,7 +19,7 @@ jobs:
       - name: Check out open-zaak ${{ env.OPEN_ZAAK_VERSION }}
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         with:
-          repository: maykinmedia/open-zaak
+          repository: open-zaak/open-zaak
           ref: ${{ env.OPEN_ZAAK_VERSION }}
 
       - name: Build open-zaak Docker image for ARM64
