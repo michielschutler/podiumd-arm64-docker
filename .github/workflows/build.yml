@@ -5,7 +5,7 @@ on:
 
 jobs:
   build-docker-image:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04-arm
     env:
       OPEN_ZAAK_VERSION: 1.26.0
     steps:
@@ -23,7 +23,7 @@ jobs:
           ref: ${{ env.OPEN_ZAAK_VERSION }}
 
       - name: Build open-zaak Docker image for ARM64
-        run: docker build --platform arm64 --tag ghcr.io/${{ github.repository_owner }}/open-zaak:${{ env.OPEN_ZAAK_VERSION }} .
+        run: docker build --tag ghcr.io/${{ github.repository_owner }}/open-zaak:${{ env.OPEN_ZAAK_VERSION }} .
 
       - name: Push open-zaak Docker image
         run: docker push ghcr.io/${{ github.repository_owner }}/open-zaak:${{ env.OPEN_ZAAK_VERSION }}
